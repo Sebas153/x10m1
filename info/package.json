@@ -1,0 +1,12 @@
+{
+  "name": "xiaomi-website-clone",
+  "version": "1.0.0",
+  "description": "Xiaomi Global website clone - E-commerce demo",
+  "scripts": {
+    "start": "npx http-server -p 3000 -o",
+    "dev": "npx live-server --port=3000"
+  },
+  "keywords": ["xiaomi", "ecommerce", "website"],
+  "author": "",
+  "license": "MIT"
+}

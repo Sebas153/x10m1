@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xiaomi Global - Smartphones, Smart Home, Lifestyle Products</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .run-button-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 10000;
+        }
+        .run-button {
+            background: #ff6900;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+        }
+        .run-button:hover {
+            background: #e55e00;
+        }
+    </style>
+</head>
+<body>
+    <div class="run-button-container">
+        <button class="run-button" onclick="window.open(window.location.href, '_blank')">
+            <i class="fas fa-play"></i> Run
+        </button>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="logo">
+                    <img src="imagenes/638902478_1610550629972557_3141434970419224217_n.jpg" alt="Xiaomi Logo" class="mi-logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#phones" class="nav-link">Xiaomi Phones</a></li>
+                    <li><a href="#redmi" class="nav-link">Redmi Phones</a></li>
+                    <li><a href="#tv" class="nav-link">TV</a></li>
+                    <li><a href="#laptops" class="nav-link">Laptops</a></li>
+                    <li><a href="#smart-home" class="nav-link">Smart Home</a></li>
+                    <li><a href="#lifestyle" class="nav-link">Lifestyle</a></li>
+                    <li><a href="#support" class="nav-link">Support</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="nav-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
+                <a href="#" class="nav-icon cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <h1 class="hero-title">Xiaomi 14 Ultra</h1>
+                    <p class="hero-subtitle">Leica Summilux Lens | Snapdragon 8 Gen 3</p>
+                    <div class="hero-buttons">
+                        <a href="#phones" class="btn btn-primary">Learn More</a>
+                        <a href="#shop" class="btn btn-outline">Buy Now</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="imagenes/s-l500.png" alt="Xiaomi 14 Ultra">
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h1 class="hero-title">Redmi Note 13 Pro</h1>
+                    <p class="hero-subtitle">200MP Camera | 120W HyperCharge</p>
+                    <div class="hero-buttons">
+                        <a href="#redmi" class="btn btn-primary">Learn More</a>
+                        <a href="#shop" class="btn btn-outline">Buy Now</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="imagenes/41QHj4xfaBL._AC_SY300_SX300_QL70_ML2_.png" alt="Redmi Note 13 Pro">
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h1 class="hero-title">Xiaomi Pad 6</h1>
+                    <p class="hero-subtitle">144Hz Display | Snapdragon 870</p>
+                    <div class="hero-buttons">
+                        <a href="#tablets" class="btn btn-primary">Learn More</a>
+                        <a href="#shop" class="btn btn-outline">Buy Now</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="imagenes/OIP.png" alt="Xiaomi Pad 6">
+                </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="promo-grid">
+                <div class="promo-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Free Shipping</span>
+                </div>
+                <div class="promo-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Official Warranty</span>
+                </div>
+                <div class="promo-item">
+                    <i class="fas fa-undo"></i>
+                    <span>30-Day Returns</span>
+                </div>
+                <div class="promo-item">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <a href="#phones" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Phones</h3>
+                    <p>Latest smartphones</p>
+                </a>
+                <a href="#tv" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3>TV & Audio</h3>
+                    <p>Smart entertainment</p>
+                </a>
+                <a href="#laptops" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Laptops</h3>
+                    <p>Powerful performance</p>
+                </a>
+                <a href="#smart-home" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Smart Home</h3>
+                    <p>Connected living</p>
+                </a>
+                <a href="#wearables" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Wearables</h3>
+                    <p>Smart watches & bands</p>
+                </a>
+                <a href="#lifestyle" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Lifestyle</h3>
+                    <p>Everyday essentials</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Phones -->
+    <section class="products" id="phones">
+        <div class="container">
+            <h2 class="section-title">Featured Phones</h2>
+            <div class="product-grid">
+                <div class="product-card" data-product="xiaomi-14-ultra">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="imagenes/s-l500.png" alt="Xiaomi 14 Ultra">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Xiaomi 14 Ultra</h3>
+                        <p class="product-desc">Leica Quad Camera | Snapdragon 8 Gen 3</p>
+                        <div class="product-price">
+                            <span class="price-current">$1,299</span>
+                            <span class="price-original">$1,499</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="1">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="xiaomi-14">
+                    <div class="product-image">
+                        <img src="imagenes/download (1).webp" alt="Xiaomi 14">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Xiaomi 14</h3>
+                        <p class="product-desc">Leica Triple Camera | Compact Flagship</p>
+                        <div class="product-price">
+                            <span class="price-current">$899</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="2">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="redmi-note-13-pro">
+                    <div class="product-badge hot">Hot</div>
+                    <div class="product-image">
+                        <img src="imagenes/41QHj4xfaBL._AC_SY300_SX300_QL70_ML2_.png" alt="Redmi Note 13 Pro">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Redmi Note 13 Pro</h3>
+                        <p class="product-desc">200MP Camera | 120W Charging</p>
+                        <div class="product-price">
+                            <span class="price-current">$399</span>
+                            <span class="price-original">$449</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="3">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="poco-x6-pro">
+                    <div class="product-image">
+                        <img src="imagenes/s-l1600.png" alt="POCO X6 Pro">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">POCO X6 Pro</h3>
+                        <p class="product-desc">Dimensity 8300 Ultra | Gaming Beast</p>
+                        <div class="product-price">
+                            <span class="price-current">$349</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="4">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Home Products -->
+    <section class="products alt-bg" id="smart-home">
+        <div class="container">
+            <h2 class="section-title">Smart Home</h2>
+            <div class="product-grid">
+                <div class="product-card" data-product="mi-band-8">
+                    <div class="product-image">
+                        <img src="imagenes/download.webp" alt="Mi Smart Band 8">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mi Smart Band 8</h3>
+                        <p class="product-desc">1.62" AMOLED | 16 Days Battery</p>
+                        <div class="product-price">
+                            <span class="price-current">$49</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="5">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="mi-tv-a2">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="imagenes/xiaomi-tv-a2-55-ultra-hd-4k-smart-tv-wifi.webp" alt="Mi TV A2">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mi TV A2 55"</h3>
+                        <p class="product-desc">4K UHD | Dolby Vision | Google TV</p>
+                        <div class="product-price">
+                            <span class="price-current">$449</span>
+                            <span class="price-original">$549</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="6">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="robot-vacuum">
+                    <div class="product-image">
+                        <img src="imagenes/61agYFbqF-L._AC_SY300_SX300_QL70_ML2_.jpg" alt="Robot Vacuum">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Robot Vacuum X10</h3>
+                        <p class="product-desc">Auto Empty | LiDAR Navigation</p>
+                        <div class="product-price">
+                            <span class="price-current">$599</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="7">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="air-purifier">
+                    <div class="product-image">
+                        <img src="imagenes/vjvrybcibiybcyu.webp" alt="Air Purifier">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Air Purifier 4 Pro</h3>
+                        <p class="product-desc">HEPA Filter | Smart Control</p>
+                        <div class="product-price">
+                            <span class="price-current">$249</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="8">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Products -->
+    <section class="products" id="lifestyle">
+        <div class="container">
+            <h2 class="section-title">Lifestyle</h2>
+            <div class="product-grid">
+                <div class="product-card" data-product="electric-scooter">
+                    <div class="product-image">
+                        <img src="imagenes/download (3).webp" alt="Electric Scooter">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Electric Scooter 4</h3>
+                        <p class="product-desc">35km Range | Max 25km/h</p>
+                        <div class="product-price">
+                            <span class="price-current">$599</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="9">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="earbuds">
+                    <div class="product-badge">Hot</div>
+                    <div class="product-image">
+                        <img src="imagenes/download (2).webp" alt="Buds 4 Pro">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Xiaomi Buds 4 Pro</h3>
+                        <p class="product-desc">ANC | Spatial Audio | 38hrs</p>
+                        <div class="product-price">
+                            <span class="price-current">$149</span>
+                            <span class="price-original">$179</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="10">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="power-bank">
+                    <div class="product-image">
+                        <img src="imagenes/download (4).webp" alt="Power Bank">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Power Bank 3 20000</h3>
+                        <p class="product-desc">22.5W Fast Charge | USB-C</p>
+                        <div class="product-price">
+                            <span class="price-current">$39</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="11">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="smart-watch">
+                    <div class="product-image">
+                        <img src="imagenes/download (5).webp" alt="Watch S1">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Xiaomi Watch S1</h3>
+                        <p class="product-desc">GPS | 12 Days Battery | AMOLED</p>
+                        <div class="product-price">
+                            <span class="price-current">$199</span>
+                        </div>
+                        <button class="btn btn-cart" data-id="12">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="support">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#phones">Xiaomi Phones</a></li>
+                        <li><a href="#redmi">Redmi Phones</a></li>
+                        <li><a href="#tv">TV</a></li>
+                        <li><a href="#laptops">Laptops</a></li>
+                        <li><a href="#tablets">Tablets</a></li>
+                        <li><a href="#smart-home">Smart Home</a></li>
+                        <li><a href="#lifestyle">Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">User Guide</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Service Centers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About Xiaomi</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Subscribe</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Xiaomi. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price">$0</span>
+            </div>
+            <button class="btn btn-checkout">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay"></div>
+
+    <!-- Toast Notification -->
+    <div class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Product added to cart!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

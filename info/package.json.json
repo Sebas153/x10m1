@@ -1,0 +1,177 @@
+{
+  "site": {
+    "name": "Xiaomi Global",
+    "version": "1.0.0",
+    "currency": "USD"
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "Xiaomi 14 Ultra",
+      "category": "phones",
+      "price": 1299,
+      "originalPrice": 1499,
+      "description": "Leica Quad Camera | Snapdragon 8 Gen 3",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/xiaomi-14-ultra/thumb.png",
+      "badge": "New"
+    },
+    {
+      "id": 2,
+      "name": "Xiaomi 14",
+      "category": "phones",
+      "price": 899,
+      "description": "Leica Triple Camera | Compact Flagship",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/xiaomi-14/thumb.png",
+      "badge": null
+    },
+    {
+      "id": 3,
+      "name": "Redmi Note 13 Pro",
+      "category": "phones",
+      "price": 399,
+      "originalPrice": 449,
+      "description": "200MP Camera | 120W Charging",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/redmi-note-13-pro/thumb.png",
+      "badge": "Hot"
+    },
+    {
+      "id": 4,
+      "name": "POCO X6 Pro",
+      "category": "phones",
+      "price": 349,
+      "description": "Dimensity 8300 Ultra | Gaming Beast",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/poco-x6-pro/thumb.png",
+      "badge": null
+    },
+    {
+      "id": 5,
+      "name": "Mi Smart Band 8",
+      "category": "smart-home",
+      "price": 49,
+      "description": "1.62\" AMOLED | 16 Days Battery",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/mi-smart-band-8/thumb.png",
+      "badge": null
+    },
+    {
+      "id": 6,
+      "name": "Mi TV A2 55\"",
+      "category": "smart-home",
+      "price": 449,
+      "originalPrice": 549,
+      "description": "4K UHD | Dolby Vision | Google TV",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/mi-tv-a2/thumb.png",
+      "badge": "New"
+    },
+    {
+      "id": 7,
+      "name": "Robot Vacuum X10",
+      "category": "smart-home",
+      "price": 599,
+      "description": "Auto Empty | LiDAR Navigation",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/robot-vacuum/thumb.png",
+      "badge": null
+    },
+    {
+      "id": 8,
+      "name": "Air Purifier 4 Pro",
+      "category": "smart-home",
+      "price": 249,
+      "description": "HEPA Filter | Smart Control",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/air-purifier/thumb.png",
+      "badge": null
+    },
+    {
+      "id": 9,
+      "name": "Electric Scooter 4",
+      "category": "lifestyle",
+      "price": 599,
+      "description": "35km Range | Max 25km/h",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/electric-scooter/thumb.png",
+      "badge": null
+    },
+    {
+      "id": 10,
+      "name": "Xiaomi Buds 4 Pro",
+      "category": "lifestyle",
+      "price": 149,
+      "originalPrice": 179,
+      "description": "ANC | Spatial Audio | 38hrs",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/buds-4-pro/thumb.png",
+      "badge": "Hot"
+    },
+    {
+      "id": 11,
+      "name": "Power Bank 3 20000",
+      "category": "lifestyle",
+      "price": 39,
+      "description": "22.5W Fast Charge | USB-C",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/power-bank/thumb.png",
+      "badge": null
+    },
+    {
+      "id": 12,
+      "name": "Xiaomi Watch S1",
+      "category": "lifestyle",
+      "price": 199,
+      "description": "GPS | 12 Days Battery | AMOLED",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF3BE74055509DD/website/product/watch-s1/thumb.png",
+      "badge": null
+    }
+  ],
+  "categories": [
+    {
+      "id": "phones",
+      "name": "Phones",
+      "icon": "fa-mobile-alt",
+      "description": "Latest smartphones"
+    },
+    {
+      "id": "tv",
+      "name": "TV & Audio",
+      "icon": "fa-tv",
+      "description": "Smart entertainment"
+    },
+    {
+      "id": "laptops",
+      "name": "Laptops",
+      "icon": "fa-laptop",
+      "description": "Powerful performance"
+    },
+    {
+      "id": "smart-home",
+      "name": "Smart Home",
+      "icon": "fa-home",
+      "description": "Connected living"
+    },
+    {
+      "id": "wearables",
+      "name": "Wearables",
+      "icon": "fa-clock",
+      "description": "Smart watches & bands"
+    },
+    {
+      "id": "lifestyle",
+      "name": "Lifestyle",
+      "icon": "fa-tshirt",
+      "description": "Everyday essentials"
+    }
+  ],
+  "promo": [
+    {
+      "icon": "fa-truck",
+      "text": "Free Shipping"
+    },
+    {
+      "icon": "fa-shield-alt",
+      "text": "Official Warranty"
+    },
+    {
+      "icon": "fa-undo",
+      "text": "30-Day Returns"
+    },
+    {
+      "icon": "fa-headset",
+      "text": "24/7 Support"
+    }
+  ]
+}
