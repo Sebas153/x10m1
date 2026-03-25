@@ -6,6 +6,7 @@
     <title>Xiaomi Global - Smartphones, Smart Home, Lifestyle Products</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         .run-button-container {
             position: fixed;
@@ -58,7 +59,7 @@
             </div>
             <div class="nav-right">
                 <a href="#" class="nav-icon"><i class="fas fa-search"></i></a>
-                <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
+                <a href="#" class="nav-icon" id="userIcon"><i class="fas fa-user"></i></a>
                 <a href="#" class="nav-icon cart-icon">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
@@ -451,11 +452,11 @@
                 <div class="footer-column">
                     <h4>Follow Us</h4>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/XiaomiGlobal/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/Xiaomi" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/xiaomi.global/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@xiaomi" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/xiaomi-technology/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="newsletter">
                         <h4>Subscribe</h4>
@@ -497,6 +498,126 @@
         </div>
     </div>
     <div class="cart-overlay"></div>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <button class="modal-close-fixed" id="closeLoginModal"><i class="fas fa-times"></i></button>
+        
+        <div class="signin-full-page">
+            <div class="card">
+                <div class="card-accent"></div>
+                
+                <div class="logo">
+                    <div class="logo-icon">Mi</div>
+                    <div class="logo-name">Xiaomi</div>
+                </div>
+                
+                <h1>Welcome back</h1>
+                <p class="subtitle">Sign in to your Mi Account</p>
+                
+                <form id="loginForm">
+                    <div class="field">
+                        <label for="name">Full Name</label>
+                        <div class="input-wrap">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <input type="text" id="name" placeholder="Your full name" autocomplete="off" required>
+                            <div class="check" id="name-check">
+                                <svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="2,6 5,9 10,3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="email">Gmail Address</label>
+                        <div class="input-wrap">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                            <input type="email" id="email" placeholder="yourname@gmail.com" autocomplete="off" required>
+                            <div class="check" id="email-check">
+                                <svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="2,6 5,9 10,3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-wrap">
+                        <button type="submit" id="submit-btn" disabled>
+                            <span class="btn-text">
+                                Continue
+                                <span class="btn-arrow">→</span>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="divider"><span>New to Xiaomi?</span></div>
+                <div class="footer">
+                    <a href="#">Create a Mi Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal-container payment-container">
+            <button class="modal-close" id="closePaymentModal"><i class="fas fa-times"></i></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Select Payment Method</h2>
+                    <p>Choose your preferred card</p>
+                </div>
+                <div class="cards-container">
+                    <div class="payment-card blue-card" data-card="european-express">
+                        <div class="card-header">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="card-name">European Express</span>
+                        </div>
+                        <p class="card-description">Te recomiendo pagar antes de hacer la compra…</p>
+                        <div class="card-check"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="payment-card yellow-card" data-card="vista">
+                        <div class="card-header">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="card-name">Vista</span>
+                        </div>
+                        <p class="card-description">La mejor promoción es no usarla…</p>
+                        <div class="card-check"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="payment-card red-card" data-card="mistercard">
+                        <div class="card-header">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="card-name">Mistercard</span>
+                        </div>
+                        <p class="card-description">Cashback del 2% para que no te sientas culpable...</p>
+                        <div class="card-check"><i class="fas fa-check"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shipping Delay Modal -->
+    <div class="modal-overlay" id="shippingModal">
+        <div class="modal-container shipping-container">
+            <div class="modal-content shipping-content">
+                <div class="shipping-image">
+                    <img src="imagenes/+shipppppp.jpg" alt="+shipppppp">
+                </div>
+                <h2 class="shipping-title">Su pedido tuvo un pequeño retraso</h2>
+                <p class="shipping-text">Pero no te preocupes, llegará pronto a tu puerta</p>
+                <button class="btn btn-primary" id="closeShippingModal">Entendido</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Toast Notification -->
     <div class="toast">
