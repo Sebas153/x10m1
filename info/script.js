@@ -1,5 +1,12 @@
 // ===== Xiaomi Website Clone - JavaScript =====
 
+// User Authentication State
+let isLoggedIn = false;
+let currentUser = null;
+
+// Payment State
+let selectedCard = null;
+
 // Product Data
 const products = [
     {
@@ -316,14 +323,9 @@ checkoutBtn.addEventListener('click', () => {
         alert('Your cart is empty!');
         return;
     }
-    
-    const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-    alert(`Thank you for your order!\nTotal: $${total}\n\nThis is a demo. No actual purchase will be made.`);
-    
-    // Clear cart
-    cart = [];
-    updateCart();
-    closeCart();
+
+    // Show payment modal directly
+    openPaymentModal();
 });
 
 // ===== Smooth Scroll =====
@@ -429,16 +431,252 @@ document.querySelector('.nav-icon[href="#"]').addEventListener('click', (e) => {
     }
 });
 
-// ===== User Icon (Placeholder) =====
-document.querySelectorAll('.nav-icon').forEach(icon => {
-    if (icon.querySelector('.fa-user')) {
-        icon.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('User account functionality would be implemented here.\n\nThis is a demo clone.');
-        });
+// ===== User Icon (Login Modal) =====
+const userIcon = document.querySelector('#userIcon');
+
+// ===== Modal Functions =====
+const loginModal = document.getElementById('loginModal');
+const paymentModal = document.getElementById('paymentModal');
+const shippingModal = document.getElementById('shippingModal');
+const closeLoginModalBtn = document.getElementById('closeLoginModal');
+const closePaymentModalBtn = document.getElementById('closePaymentModal');
+const closeShippingModalBtn = document.getElementById('closeShippingModal');
+const loginForm = document.getElementById('loginForm');
+const paymentCards = document.querySelectorAll('.payment-card');
+
+// Login Modal Functions
+function openLoginModal() {
+    if (loginModal) {
+        loginModal.classList.add('active');
+        // Hide body content
+        document.body.style.overflow = 'hidden';
     }
+}
+
+function closeLoginModal() {
+    if (loginModal) {
+        loginModal.classList.remove('active');
+        // Restore body scroll
+        document.body.style.overflow = '';
+    }
+}
+
+// Payment Modal Functions
+function openPaymentModal() {
+    if (paymentModal) {
+        paymentModal.classList.add('active');
+        // Close cart sidebar
+        closeCart();
+    }
+}
+
+function closePaymentModal() {
+    if (paymentModal) {
+        paymentModal.classList.remove('active');
+        // Reset selected card
+        selectedCard = null;
+        paymentCards.forEach(card => card.classList.remove('selected'));
+    }
+}
+
+// Shipping Modal Functions
+function openShippingModal() {
+    if (shippingModal) {
+        shippingModal.classList.add('active');
+    }
+}
+
+function closeShippingModalFn() {
+    if (shippingModal) {
+        shippingModal.classList.remove('active');
+        // Clear cart and reset
+        cart = [];
+        updateCart();
+        closePaymentModal();
+    }
+}
+
+// User Icon Click Handler
+if (userIcon) {
+    userIcon.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!isLoggedIn) {
+            openLoginModal();
+        } else {
+            // Show user info
+            alert(`Logged in as:\nName: ${currentUser.name}\nEmail: ${currentUser.email}`);
+        }
+    });
+}
+
+// Event Listeners for Modals
+if (closeLoginModalBtn) {
+    closeLoginModalBtn.addEventListener('click', closeLoginModal);
+}
+
+if (closePaymentModalBtn) {
+    closePaymentModalBtn.addEventListener('click', closePaymentModal);
+}
+
+if (closeShippingModalBtn) {
+    closeShippingModalBtn.addEventListener('click', closeShippingModalFn);
+}
+
+// Close login modal when clicking outside the card
+if (loginModal) {
+    loginModal.addEventListener('click', (e) => {
+        if (e.target === loginModal || e.target.classList.contains('signin-full-page')) {
+            closeLoginModal();
+        }
+    });
+}
+
+if (paymentModal) {
+    paymentModal.addEventListener('click', (e) => {
+        if (e.target === paymentModal) {
+            closePaymentModal();
+        }
+    });
+}
+
+if (paymentModal) {
+    paymentModal.addEventListener('click', (e) => {
+        if (e.target === paymentModal) {
+            closePaymentModal();
+        }
+    });
+}
+
+// Login Form Submit with validation
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const submitBtn = document.getElementById('submit-btn');
+const nameCheck = document.getElementById('name-check');
+const emailCheck = document.getElementById('email-check');
+
+function isValidGmail(v) {
+    return /^[^\s@]+@gmail\.com$/i.test(v.trim());
+}
+
+function isValidName(v) {
+    return v.trim().length >= 2;
+}
+
+function updateForm() {
+    if (!nameInput || !emailInput || !submitBtn) return;
+    
+    const nameOk = isValidName(nameInput.value);
+    const emailOk = isValidGmail(emailInput.value);
+    
+    if (nameCheck) nameCheck.classList.toggle('show', nameOk);
+    if (nameInput) nameInput.classList.toggle('filled', nameOk);
+    
+    if (emailCheck) emailCheck.classList.toggle('show', emailOk);
+    if (emailInput) emailInput.classList.toggle('filled', emailOk);
+    
+    if (nameOk && emailOk) {
+        submitBtn.disabled = false;
+        submitBtn.classList.add('active');
+    } else {
+        submitBtn.disabled = true;
+        submitBtn.classList.remove('active');
+    }
+}
+
+if (nameInput) {
+    nameInput.addEventListener('input', updateForm);
+}
+
+if (emailInput) {
+    emailInput.addEventListener('input', updateForm);
+}
+
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = nameInput.value;
+        const email = emailInput.value;
+
+        // Save user data
+        currentUser = { name, email };
+        isLoggedIn = true;
+
+        // Update UI
+        document.body.classList.add('user-logged-in');
+
+        // Show success message
+        showToast();
+        const toastEl = document.querySelector('.toast');
+        if (toastEl) {
+            toastEl.querySelector('span').textContent = `Welcome, ${name}!`;
+        }
+
+        // Close login modal
+        closeLoginModal();
+
+        // Reset form
+        loginForm.reset();
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.classList.remove('active');
+        }
+    });
+}
+
+// Ripple effect for button
+if (submitBtn) {
+    submitBtn.addEventListener('click', function(e) {
+        if (!submitBtn.classList.contains('active')) return;
+        const rect = submitBtn.getBoundingClientRect();
+        const r = document.createElement('span');
+        r.className = 'ripple';
+        const size = Math.max(rect.width, rect.height);
+        r.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px`;
+        submitBtn.appendChild(r);
+        setTimeout(() => r.remove(), 700);
+    });
+}
+
+// Payment Card Selection
+paymentCards.forEach(card => {
+    card.addEventListener('click', () => {
+        // Remove selected from all cards
+        paymentCards.forEach(c => c.classList.remove('selected'));
+        
+        // Add selected to clicked card
+        card.classList.add('selected');
+        selectedCard = card.dataset.card;
+
+        // Show shipping delay modal after a short delay
+        setTimeout(() => {
+            closePaymentModal();
+            setTimeout(() => {
+                openShippingModal();
+            }, 300);
+        }, 500);
+    });
 });
+
+// Google Login Button
+const googleLoginBtn = document.querySelector('.social-btn.google');
+if (googleLoginBtn) {
+    googleLoginBtn.addEventListener('click', () => {
+        // Simulate Google login
+        currentUser = { name: 'Google User', email: 'user@gmail.com' };
+        isLoggedIn = true;
+        document.body.classList.add('user-logged-in');
+        
+        showToast();
+        const toastEl = document.querySelector('.toast');
+        if (toastEl) {
+            toastEl.querySelector('span').textContent = 'Welcome, Google User!';
+        }
+        
+        closeLoginModal();
+    });
+}
 
 console.log('Xiaomi Website Clone Loaded Successfully! 🎉');
 console.log('Products available:', products.length);
 console.log('Features: Hero Slider, Shopping Cart, Smooth Scroll, Animations');
+
